@@ -40,3 +40,5 @@ cd /opt/carla-simulator/bin
 
 ./CarlaUE4.sh
 ```
+
+![alt 1번이미지](/image/img1.png)
