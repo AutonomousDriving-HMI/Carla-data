@@ -15,7 +15,7 @@
 #### 1. Development Environment
 - os : Ubuntu 16.04
 - package : pygame, numpy
-- version : pip3, python3.5,
+- version : pip3, python3.7
 
 #### 2. Carla Installation
 
