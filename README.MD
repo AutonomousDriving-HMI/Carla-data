@@ -43,9 +43,8 @@ cd /opt/carla-simulator/bin
 
 ![alt 1번이미지](/image/img1.png)
 
-#### 3. Carla Running
-
-1. Spawn people & vehicles.
+3. Carla Running  
+- Spawn people & vehicles.
 
 ```cmd
 cd PythonAPI/examples
@@ -55,7 +54,7 @@ python3 spawn_npc.py
 
 ![alt 2번이미지](/image/img2.png)
 
-#### 4. Carla-ros-bridge Installation
+#### 3. Carla-ros-bridge Installation
 
 1. add the apt repository
 ```cmd
