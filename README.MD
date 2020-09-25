@@ -55,3 +55,34 @@ python3 spawn_npc.py
 
 ![alt 2번이미지](/image/img2.png)
 
+## 3. Carla-ros-bridge Installation
+
+#### 1. add the apt repository
+```cmd
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1AF1527DE64CB8D9
+sudo add-apt-repository "deb [arch=amd64] http://dist.carla.org/carla $(lsb_release -sc) main"
+```
+#### 2. simply install the ROS bridge
+```cmd
+sudo apt-get update
+sudo apt-get install carla-ros-bridge
+```
+This will install carla-ros-bridge in /opt/carla-ros-bridge.
+
+#### 3. add the PYTHONPATH & setup source file
+```cmd
+export PYTHONPATH=$PYTHONPATH:<path-to-carla>/PythonAPI/carla/dist/carla-<carla_version_and_arch>.egg
+source /opt/carla-ros-bridge/kinetic/setup.bash
+```
+
+#### 4. start the RosBridge
+
+- Before we start the RosBridge, we already start the Carla-simulator. 
+```cmd
+# Option 1: start the ros bridge
+roslaunch carla_ros_bridge carla_ros_bridge.launch
+
+# Option 2: start the ros bridge together with an example ego vehicle
+roslaunch carla_ros_bridge carla_ros_bridge_with_example_ego_vehicle.launch
+```
+
