@@ -12,12 +12,12 @@
 - Doing Carla Simulator
 - Link : https://carla.readthedocs.io/en/latest/
 
-#### 1. Development Environment
+### 1. Development Environment
 - os : Ubuntu 16.04
 - package : pygame, numpy
 - version : pip3, python3.7
 
-#### 2. Carla Installation
+### 2. Carla Installation
 
 1. Install pygame
 
@@ -54,7 +54,7 @@ python3 spawn_npc.py
 
 ![alt 2번이미지](/image/img2.png)
 
-#### 3. Carla-ros-bridge Installation
+### 3. Carla-ros-bridge Installation
 
 1. add the apt repository
 ```cmd
