@@ -71,10 +71,13 @@ sudo apt-get install carla-ros-bridge
 
 3. add the PYTHONPATH & setup source file
 ```cmd
-export PYTHONPATH=$PYTHONPATH:<path-to-carla>/PythonAPI/carla/dist/carla-<carla_version_and_arch>.egg
+export PYTHONPATH=/opt/carla-simulator/PythonAPI/carla/dist/carla-0.9.10-py2.7-linux-x86_64.egg
+python -c 'import carla;print("Success")'
+
 source /opt/carla-ros-bridge/kinetic/setup.bash
 ```
-  
+
+
 4. start the RosBridge
 
 - Before we start the RosBridge, we already start the Carla-simulator.  
