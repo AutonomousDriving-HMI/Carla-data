@@ -22,23 +22,23 @@
 1. Install pygame
 
 ```cmd
-pip install --user pygame numpy
+$ pip install --user pygame numpy
 ```
 
 2. deb package installation of CARLA 0.9.9 (only Linux)
 
 ```cmd 
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 92635A407F7A020C
+$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 92635A407F7A020C
 
-sudo add-apt-repository "deb [arch=amd64 trusted=yes] http://dist.carla.org/carla-0.9.9/ all main"
+$ sudo add-apt-repository "deb [arch=amd64 trusted=yes] http://dist.carla.org/carla-0.9.9/ all main"
 
-sudo apt-get update
+$ sudo apt-get update
 
-sudo apt-get install carla-simulator
+$ sudo apt-get install carla-simulator
 
-cd /opt/carla-simulator/bin
+$ cd /opt/carla-simulator/bin
 
-./CarlaUE4.sh
+$ ./CarlaUE4.sh
 ```
 
 ![alt 1번이미지](/image/img1.png)
@@ -47,9 +47,9 @@ cd /opt/carla-simulator/bin
 - Spawn people & vehicles.
 
 ```cmd
-cd PythonAPI/examples
+$ cd PythonAPI/examples
 
-python3 spawn_npc.py
+$ python3 spawn_npc.py
 ```
 
 ![alt 2번이미지](/image/img2.png)
@@ -58,23 +58,23 @@ python3 spawn_npc.py
 
 1. add the apt repository
 ```cmd
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1AF1527DE64CB8D9
-sudo add-apt-repository "deb [arch=amd64] http://dist.carla.org/carla $(lsb_release -sc) main"
+$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1AF1527DE64CB8D9
+$ sudo add-apt-repository "deb [arch=amd64] http://dist.carla.org/carla $(lsb_release -sc) main"
 ```
   
 2. simply install the ROS bridge
 ```cmd
-sudo apt-get update
-sudo apt-get install carla-ros-bridge
+$ sudo apt-get update
+$ sudo apt-get install carla-ros-bridge
 ```  
 - This will install carla-ros-bridge in /opt/carla-ros-bridge.
 
 3. add the PYTHONPATH & setup source file
 ```cmd
-export PYTHONPATH=/opt/carla-simulator/PythonAPI/carla/dist/carla-0.9.10-py2.7-linux-x86_64.egg
-python -c 'import carla;print("Success")'
+$ export PYTHONPATH=/opt/carla-simulator/PythonAPI/carla/dist/carla-0.9.10-py2.7-linux-x86_64.egg
+$ python -c 'import carla;print("Success")'
 
-source /opt/carla-ros-bridge/kinetic/setup.bash
+$ source /opt/carla-ros-bridge/kinetic/setup.bash
 ```
 
 
@@ -93,7 +93,7 @@ roslaunch carla_ros_bridge carla_ros_bridge_with_example_ego_vehicle.launch
 
 ### 4. CarlaViz Installation
 
-1. Installation docker
+#### 1. Installation docker
 ```cmd
 $ sudo apt update
 $ sudo apt install apt-transport-https ca-certificates curl software-properties-common
@@ -103,33 +103,35 @@ $ sudo apt update
 $ apt-cache policy docker-ce
 $ sudo apt install docker-ce
 ```
-2. Pull docker image
+#### 2. Pull docker image
 ```cmd
 $ docker pull mjxu96/carlaviz:0.9.9
 ```
-3. Run Example
+#### 3. Run Example
 
-1). launch carla simulator
+##### 1. launch carla simulator
 ```cmd
-cd CARLA_SIMULATOR_PATH
-./CarlaUE4.sh -opengl
+$ cd CARLA_SIMULATOR_PATH
+$ ./CarlaUE4.sh -opengl
 ```
 
-2) launch the docker image
+##### 2. launch the docker image
 
-if you are using docker on Linux and Carla server is running on localhost:2000
-```cmd
-docker run -it --network="host" -e CARLAVIZ_HOST_IP=localhost -e CARLA_SERVER_IP=localhost -e CARLA_SERVER_PORT=2000 mjxu96/carlaviz:0.9.9
-```
-** based on your carla version
+if you are using docker on Linux and Carla server is running on localhost:2000, based on your carla version
 
-3) run this script
 ```cmd
-python3 example.py
+$ docker run -it --network="host" -e CARLAVIZ_HOST_IP=localhost -e CARLA_SERVER_IP=localhost -e CARLA_SERVER_PORT=2000 mjxu96/carlaviz:0.9.9
 ```
 
-4) open your browser and go to localhost:8080 or CARLAVIZ_HOST_IP:8080
+##### 3. run this script
 
+```cmd
+$ python3 example.py
+```
+
+##### 4. open your browser and go to localhost:8080 or CARLAVIZ_HOST_IP:8080
+
+Result Image
 ![alt 3번이미지](/image/img3.png)
 ![alt 4번이미지](/image/img4.png)
 ![alt 5번이미지](/image/img5.png)
