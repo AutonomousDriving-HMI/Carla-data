@@ -96,44 +96,41 @@ roslaunch carla_ros_bridge carla_ros_bridge_with_example_ego_vehicle.launch
 1. Installation docker
 ```cmd
 $ sudo apt update
-
 $ sudo apt install apt-transport-https ca-certificates curl software-properties-common
-
 $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
 $ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-
 $ sudo apt update
-
 $ apt-cache policy docker-ce
-
 $ sudo apt install docker-ce
 ```
 2. Pull docker image
 ```cmd
-docker pull mjxu96/carlaviz:0.9.9
+$ docker pull mjxu96/carlaviz:0.9.9
 ```
 3. Run Example
-# 1. launch carla simulator
+
+1). launch carla simulator
+```cmd
 cd CARLA_SIMULATOR_PATH
 ./CarlaUE4.sh -opengl
+```
 
-# 2. pull and launch the docker image
-#    if you run this command in a remote machine, replace CARLAVIZ_HOST_IP 
-#    with the ip address of the machine where you run this command, 
-#    otherwise, keep it as localhost
-docker pull mjxu96/carlaviz:0.9.9 * based on your carla version
+2) launch the docker image
 
-# if you are using docker on Linux and Carla server is running on localhost:2000
+if you are using docker on Linux and Carla server is running on localhost:2000
+```cmd
 docker run -it --network="host" -e CARLAVIZ_HOST_IP=localhost -e CARLA_SERVER_IP=localhost -e CARLA_SERVER_PORT=2000 mjxu96/carlaviz:0.9.9
+```
 ** based on your carla version
 
-# if you are using docker on Windows/MacOS and Carla server is running on localhost:2000
-# NOTE: you can only run CarlaViz with version 0.9.10 on Windows
-docker run -it -e CARLAVIZ_HOST_IP=localhost -e CARLA_SERVER_IP=host.docker.internal -e CARLA_SERVER_PORT=2000 -p 8080-8081:8080-8081 -p 8089:8089 mjxu96/carlaviz:0.9.10 # based on your carla version
-
-# 3. run this script
+3) run this script
+```cmd
 python3 example.py
+```
 
-# 4. open your browser and go to localhost:8080 or CARLAVIZ_HOST_IP:8080
+4) open your browser and go to localhost:8080 or CARLAVIZ_HOST_IP:8080
+
+![alt 3번이미지](/image/img3.png)
+![alt 4번이미지](/image/img4.png)
+
 
