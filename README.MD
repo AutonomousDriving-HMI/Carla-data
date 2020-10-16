@@ -136,4 +136,6 @@ Result Image
 ![alt 4번이미지](/image/img4.png)
 ![alt 5번이미지](/image/img5.png)
 
+### 5. CarlaViz Diagram
 
+![alt diagram이미지](/image/diagram1.png)
