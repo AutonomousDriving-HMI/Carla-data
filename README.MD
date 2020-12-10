@@ -13,7 +13,7 @@
 - Link : https://carla.readthedocs.io/en/latest/
 
 ### 1. Development Environment
-- os : Ubuntu 16.04
+- os : Ubuntu 18.04, Ubuntu 16.04
 - package : pygame, numpy
 - version : pip3, python3.7
 
